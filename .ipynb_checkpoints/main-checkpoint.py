@@ -2,6 +2,8 @@ import argparse
 from pretrain import pre_train
 from train import train_model
 from evaluate import evaluate_model_cr, evaluate_model_metrics
+import os
+os.environ["WANDB_DISABLED"] = "true"
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
