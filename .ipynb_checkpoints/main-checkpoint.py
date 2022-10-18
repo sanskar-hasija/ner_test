@@ -42,7 +42,7 @@ if __name__ == "__main__":
         pre_train(
             args.input_dir,
             args.pre_train_block_size,
-            args.model_name,
+            args.model_name_or_path,
             args.pre_train_epochs,
             args.pre_train_batch_size,
             args.pre_train_save_steps,
