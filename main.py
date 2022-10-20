@@ -5,6 +5,11 @@ from evaluate import evaluate_model_cr, evaluate_model_metrics
 import os
 os.environ["WANDB_DISABLED"] = "true"
 
+def boolean_string(s):
+    if s not in {'False', 'True'}:
+        raise ValueError('Not a valid boolean string')
+    return s == 'True'
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     
@@ -15,7 +20,7 @@ if __name__ == "__main__":
         '--model_name_or_path', type=str, default='allenai/scibert_scivocab_uncased'
     )
     parser.add_argument(
-        '--pre_train', type=bool, default=True
+        '--pre_train', type=boolean_string, default=True
     )
     parser.add_argument(
         '--pre_train_block_size', type=int, default=128
